@@ -1,0 +1,13 @@
+model:
+  architecture: 'ResNet50V2'
+
+training:
+  batch_size: 32
+  initial_learning_rate: 0.001
+  epochs: 100
+  early_stopping_patience: 10
+  target_accuracy: 0.95
+
+data:
+  train_path: 'structures_dataset'
+  test_path: 'dataset_test'

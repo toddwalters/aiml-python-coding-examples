@@ -1,0 +1,9 @@
+# train and val data
+train: /content/gdrive/MyDrive/yolo/cat/train/
+val: /content/gdrive/MyDrive/yolo/cat/val/
+
+# number of classes
+nc: 1
+
+# class names
+names: ['cat']
