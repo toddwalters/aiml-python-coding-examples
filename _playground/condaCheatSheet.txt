@@ -3,6 +3,7 @@ conda install -c conda-forge python-dotenv
 conda install pip boto3 pandas ipykerne
 conda install -c conda-forge opencv
 conda install matplotlib
+conda install pyyaml
 # CPU Only Verion
 conda install -c conda-forge tensorflow
 # GPU version

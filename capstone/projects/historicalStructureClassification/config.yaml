@@ -5,6 +5,21 @@ data:
   target_size: [224, 224]
   preprocessing_function: 'efficientnet_preprocess'
 
+augmentation:
+  rotation_range: 20
+  width_shift_range: 0.2
+  height_shift_range: 0.2
+  horizontal_flip: true
+  vertical_flip: true
+  zoom_range: 0.2
+  brightness_range: 0.2
+  contrast_range: 0.2
+  saturation_range: 0.2
+  hue_range: 0.1
+  # gaussian_blur: 0.5
+  # shear_range: 0.2
+  # cutout_size: [10, 10]
+
 model:
   architecture: 'EfficientNetB0'
   input_shape: [224, 224, 3]
@@ -30,29 +45,12 @@ lr_finder:
   stop_factor: 4
   beta: 0.98
 
-augmentation:
-  rotation_range: 20
-  width_shift_range: 0.2
-  height_shift_range: 0.2
-  horizontal_flip: true
-  vertical_flip: true
-  zoom_range: 0.2
-  brightness_range: 0.2
-  contrast_range: 0.2
-  saturation_range: 0.2
-  hue_range: 0.1
-  gaussian_noise: 0.01
-  gaussian_blur: 0.5
-  shear_range: 0.2
-  cutout_size: [10, 10]
-
 visualization:
   figure_size: [12, 4]
   history_plot_path: '/path/to/save/history_plot.png'
 
 gpu:
-  memory_growth: true
-  allow_growth: true
+
 
 # ARCHITECTURES = {
 #   'ResNet50V2': ResNet50V2,
