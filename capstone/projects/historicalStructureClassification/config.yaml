@@ -1,7 +1,7 @@
 data:
   train_dir: 'structures_dataset'
   test_dir: 'dataset_test'
-  batch_size: 32
+  batch_size: 16
   target_size: [224, 224]
   preprocessing_function: 'efficientnet_preprocess'
 
@@ -36,7 +36,7 @@ training:
   target_accuracy: 0.95
   find_lr: true
   pretrain_model_eval: true
-  model_checkpoint_path: '/path/to/save/model/checkpoint.h5'
+  model_checkpoint_path: 'checkpoint.h5'
 
 lr_finder:
   start_lr: 1e-7
@@ -47,7 +47,7 @@ lr_finder:
 
 visualization:
   figure_size: [12, 4]
-  history_plot_path: '/path/to/save/history_plot.png'
+  history_plot_path: 'history_plot.png'
 
 gpu:
 
