@@ -1,21 +1,21 @@
 data:
   train_dir: 'structures_dataset'
   test_dir: 'dataset_test'
-  batch_size: 16
+  batch_size: 32
   target_size: [224, 224]
   preprocessing_function: 'efficientnet_preprocess'
 
 augmentation:
-  rotation_range: 20
-  width_shift_range: 0.2
-  height_shift_range: 0.2
+  rotation_range: 10
+  width_shift_range: 0.1
+  height_shift_range: 0.1
   horizontal_flip: true
-  vertical_flip: true
-  zoom_range: 0.2
-  brightness_range: 0.2
-  contrast_range: 0.2
-  saturation_range: 0.2
-  hue_range: 0.1
+  vertical_flip: false
+  zoom_range: 0.1
+  brightness_range: 0.1
+  contrast_range: 0.1
+  saturation_range: 0.1
+  hue_range: 0.05
   # gaussian_blur: 0.5
   # shear_range: 0.2
   # cutout_size: [10, 10]
@@ -23,7 +23,7 @@ augmentation:
 model:
   architecture: 'EfficientNetB0'
   input_shape: [224, 224, 3]
-  initial_learning_rate: 0.001
+  initial_learning_rate: 0.0001
   decay_steps: 100
   decay_rate: 0.96
   dense_units: 512
@@ -31,12 +31,12 @@ model:
   additional_metrics: ['Precision', 'Recall', 'AUC']
 
 training:
-  epochs: 10
-  patience: 5
+  epochs: 2
+  patience: 10
   target_accuracy: 0.95
-  find_lr: true
+  find_lr: false
   pretrain_model_eval: true
-  model_checkpoint_path: 'checkpoint.h5'
+  model_checkpoint_path: 'checkpoint.h5.keras'
 
 lr_finder:
   start_lr: 1e-7
