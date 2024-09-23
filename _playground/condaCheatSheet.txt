@@ -1,6 +1,6 @@
 conda install -c conda-forge python-dotenv
 # install packages in your new conda environment
-conda install pip boto3 pandas ipykerne
+conda install pip boto3 pandas ipykernel
 conda install -c conda-forge opencv
 conda install matplotlib
 conda install pyyaml
