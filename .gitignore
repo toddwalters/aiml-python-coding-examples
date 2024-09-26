@@ -9,6 +9,7 @@
 
 # temporary data sets
 boat_type_classification_dataset/
+checkpoint.*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
