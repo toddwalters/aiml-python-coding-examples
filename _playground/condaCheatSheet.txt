@@ -9,6 +9,7 @@ conda install -c conda-forge tensorflow
 # GPU version
 conda install -c conda-forge tensorflow-gpu
 conda install -c conda-forge scikit-learn
+conda install  -c conda-forge keras-tuner
 # parse env name information from your new environment
 export CURRENT_ENV_NAME=$(conda info | grep "active environment" | cut -d : -f 2 | tr -d ' ')
 

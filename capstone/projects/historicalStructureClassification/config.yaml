@@ -6,12 +6,12 @@ data:
   preprocessing_function: "resnet_preprocess"
 
 augmentation:
-  rotation_range: 0
-  # width_shift_range: 0.1
-  # height_shift_range: 0.1
-  # horizontal_flip: true
-  # vertical_flip: false
-  # zoom_range: 0.1
+  rotation_range: 20
+  width_shift_range: 0.1
+  height_shift_range: 0.1
+  horizontal_flip: true
+  vertical_flip: false
+  zoom_range: 0.1
   # brightness_range: 0.1
   # contrast_range: 0.1
   # saturation_range: 0.1
@@ -45,11 +45,40 @@ lr_finder:
   stop_factor: 4
   beta: 0.98
 
+hyperparameters:
+  learning_rate:
+    min: 1e-5
+    max: 1e-3
+    # default: 1e-4
+    default: 1.0294583766002546e-05
+  dense_units:
+    min: 128
+    max: 1024
+    step: 128
+    default: 128
+  dropout_rate:
+    min: 0.0
+    max: 0.7
+    default: 0.1
+  optimizer:
+    choices: ['adam', 'sgd']
+    default: 'adam'
+
+tuning:
+  perform_tuning: true  # Set to false to skip hyperparameter tuning
+
+tuner:
+  max_trials: 5
+  executions_per_trial: 1
+
 visualization:
   figure_size: [12, 4]
   history_plot_path: "history_plot.png"
 
 gpu:
+  memory_growth: true
+  allow_growth: true
+
 # ARCHITECTURES = {
 #   'ResNet50V2': ResNet50V2,
 #   'VGG16': VGG16,
