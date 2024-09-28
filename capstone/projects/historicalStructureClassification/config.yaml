@@ -31,9 +31,9 @@ model:
   additional_metrics: ["Precision", "Recall", "AUC"]
 
 training:
-  epochs: 25
+  epochs: 25 
   patience: 5
-  target_accuracy: 0.95
+  target_accuracy: 0.99 # originally 0.95 
   find_lr: false
   pretrain_model_eval: true
   model_checkpoint_path: "checkpoint.h5.keras"
@@ -49,7 +49,6 @@ hyperparameters:
   learning_rate:
     min: 1e-5
     max: 1e-3
-    # default: 1e-4
     default: 1.0294583766002546e-05
   dense_units:
     min: 128
@@ -65,7 +64,7 @@ hyperparameters:
     default: 'adam'
 
 tuning:
-  perform_tuning: true  # Set to false to skip hyperparameter tuning
+  perform_tuning: false  # Set to false to skip hyperparameter tuning
 
 tuner:
   max_trials: 5
