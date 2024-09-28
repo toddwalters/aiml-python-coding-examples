@@ -1,17 +1,20 @@
-conda install -c conda-forge python-dotenv
-# install packages in your new conda environment
+conda create --name <name>
+
 conda install pip boto3 pandas ipykernel
-conda install -c conda-forge opencv
-conda install matplotlib
-conda install pyyaml
-# CPU Only Verion
-conda install -c conda-forge tensorflow
-# GPU version
-conda install -c conda-forge tensorflow-gpu
-conda install -c conda-forge scikit-learn
-conda install  -c conda-forge keras-tuner
+
 # parse env name information from your new environment
 export CURRENT_ENV_NAME=$(conda info | grep "active environment" | cut -d : -f 2 | tr -d ' ')
 
 # register your new environment as Jupyter Kernel for execution 
-python3 -m ipykernel install --user --name $CURRENT_ENV_NAME --display-name "user-env:($CURRENT_ENV_NAME)"
+python -m ipykernel install --user --name $CURRENT_ENV_NAME --display-name "user-env:($CURRENT_ENV_NAME)"
+
+# install packages in your new conda environment
+conda install -c conda-forge python-dotenv matplotlib pyyaml 
+conda install -c conda-forge scikit-learn opencv 
+conda install -c conda-forge tensorflow 
+conda install -c conda-forge tensorflow-gpu 
+conda install -c conda-forge keras-tuner
+
+# If conda install doesn't work
+pip install tensorflow tensorflow-gpu
+
