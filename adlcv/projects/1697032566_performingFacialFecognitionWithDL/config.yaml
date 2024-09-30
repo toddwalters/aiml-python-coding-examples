@@ -10,13 +10,13 @@ data:
   preprocessing_function: "resnet_preprocess"
 
 augmentation:
-  rotation_range: 20
+  rotation_range: 5
   width_shift_range: 0.1
   height_shift_range: 0.1
   horizontal_flip: true
   vertical_flip: false
-  zoom_range: 0.1
-  # brightness_range: 0.1
+  zoom_range: 0.2
+  brightness_range: [0.8,1.2]
   # contrast_range: 0.1
   # saturation_range: 0.1
   # hue_range: 0.05
@@ -35,7 +35,7 @@ model:
   additional_metrics: ["Precision", "Recall", "AUC"]
 
 training:
-  epochs: 1 
+  epochs: 100
   patience: 5
   target_accuracy: 0.99 
   find_lr: false
@@ -61,7 +61,7 @@ hyperparameters:
     default: 'adam'
 
 tuning:
-  perform_tuning: false  # Set to false to skip hyperparameter tuning
+  perform_tuning: True  # Set to false to skip hyperparameter tuning
 
 tuner:
   max_trials: 5
