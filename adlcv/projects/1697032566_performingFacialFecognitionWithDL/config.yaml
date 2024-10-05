@@ -43,12 +43,12 @@ data:
   preprocessing_function: 'resnet_preprocess' # Function for preprocessing images
 
 tuning:
-  perform_tuning: False              # Toggle for performing hyperparameter tuning
-  max_trials: 5                      # Maximum number of tuning trials
+  perform_tuning: True              # Toggle for performing hyperparameter tuning
+  max_trials: 2                      # Maximum number of tuning trials
   executions_per_trial: 1            # Number of executions per tuning trial
 
 training:
-  initial_epochs: 25                 # Number of initial epochs
+  initial_epochs: 2                 # Number of initial epochs
   fine_tune_epochs: 0                # Number of fine-tuning epochs
   patience: 5                        # Early stopping patience
   target_accuracy: 0.99              # Desired target accuracy
@@ -57,42 +57,70 @@ training:
 
 hyperparameters:
   pretrained_model:                  # Hyperparameters for pre-trained models
-    learning_rate:
-      min: 1e-5
-      max: 1e-3
-      default: 1e-4
+    num_dense_layers:
+      min: 1
+      max: 3
+      default: 2
     dense_units:
       min: 128
       max: 1024
       step: 128
-      default: 128
+      default: 512
     dropout_rate:
       min: 0.0
       max: 0.7
       step: 0.1
-      default: 0.1
+      default: 0.5
+    use_batch_norm:
+      default: False
     optimizer:
       choices: ['adam', 'sgd']
       default: 'adam'
-
-  scratch_model:                     # Hyperparameters for scratch models
-    learning_rate_scratch:
+    learning_rate:
       min: 1e-5
-      max: 1e-2
-      default: 1e-3
+      max: 1e-3
+      default: 1e-4
+
+  scratch_model:
+    num_conv_layers:
+      min: 1
+      max: 5
+      default: 3
+    conv_filters_scratch:
+      min: 32
+      max: 256
+      step: 32
+      default: 64
+    conv_kernel_size_scratch:
+      choices: [3, 5]
+      default: 3
+    use_conv_batch_norm_scratch:
+      default: False
+    conv_dropout_rate_scratch:
+      min: 0.0
+      max: 0.5
+      step: 0.1
+      default: 0.0
+    num_dense_layers_scratch:
+      min: 1
+      max: 3
+      default: 2
     dense_units_scratch:
       min: 64
       max: 512
       step: 64
       default: 128
+    use_dense_batch_norm_scratch:
+      default: False
     dropout_rate_scratch:
-      min: 0.1
+      min: 0.0
       max: 0.5
       step: 0.1
       default: 0.3
-    optimizer_scratch:
-      choices: ['adam', 'sgd']
-      default: 'adam'
+    learning_rate_scratch:
+      min: 1e-5
+      max: 1e-2
+      default: 1e-3
 
 reduce_lr_on_plateau:
   monitor: 'val_loss'                # Metric to monitor for reducing LR
