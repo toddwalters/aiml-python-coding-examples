@@ -1,25 +1,31 @@
-pretrain_model_eval: False  # or True, if you plan to use it
-
 model:
-  use_pretained_weights: True
-  name: 'ResNet50V2'
-  input_shape: [128, 128, 3]
-  initial_learning_rate: 0.001
-  decay_steps: 100
-  decay_rate: 0.96
-  dense_units: 512
-  dropout_rate: 0.5
-  additional_metrics: ['Precision', 'Recall', 'AUC', 'F1Score']
+  name: 'ResNet50V2'                 # Model name
+  use_pretrained_weights: True       # Use pre-trained weights or not
+  input_shape: [128, 128, 3]         # Input image dimensions
+  dense_units: 512                   # Units in the dense layer
+  dropout_rate: 0.5                  # Dropout rate
+  initial_learning_rate: 0.001       # Initial learning rate
+  decay_steps: 100                   # Learning rate decay steps
+  decay_rate: 0.96                   # Learning rate decay rate
+  additional_metrics:                # List of metrics to track
+    - Precision
+    - Recall
+    - AUC
+    - F1Score
+  fine_tune_learning_rate: 1e-5      # Learning rate for fine-tuning
+  pretrained_model_eval: True        # Evaluate pre-trained model before training
+
 
 augmentation:
-  rotation_range: 5  # degrees, ensure it's <= 360
-  width_shift_range: 0.1  # fraction, ensure it's <= 1.0
-  height_shift_range: 0.1  # fraction, ensure it's <= 1.0
-  horizontal_flip: true
-  vertical_flip: false
-  zoom_range: 0.2  # fraction, ensure it's <= 1.0
-  brightness_range: 0.8 # adjust as needed
-  # contrast_range: 0.1 # adjust as needed
+  enabled: True                      # Toggle to enable/disable data augmentation
+  rotation_range: 5                  # Rotation in degrees (<= 360)
+  width_shift_range: 0.1             # Width shift fraction (<= 1.0)
+  height_shift_range: 0.1            # Height shift fraction (<= 1.0)
+  horizontal_flip: True              # Enable horizontal flipping
+  vertical_flip: False               # Enable vertical flipping
+  zoom_range: 0.2                    # Zoom range (<= 1.0)
+  brightness_range: 0.8              # Brightness adjustment
+  # contrast_range: 0.1              # adjust as needed
   # saturation_range: 0.1
   # hue_range: 0.05
   # gaussian_blur: 0.5
@@ -27,96 +33,81 @@ augmentation:
   # cutout_size: [10, 10]
 
 data:
-  pre_split: True  # Set to False if using a single directory
-  dataset_path: 'dataset'  # Used if pre_split is False
-  dataset_dir: 'att_faces'  # Used if pre_split is True
-  train_dir: 'train_dataset'
-  test_dir: 'test_dataset'
-  validation_dir: 'validation_dataset'
-  batch_size: 32
-  target_size: [128, 128]
-  preprocessing_function: 'resnet_preprocess'
+  pre_split: True                    # Pre-split dataset directories or not
+  dataset_dir: 'att_faces'           # Root dataset directory (used if pre_split=True)
+  train_dir: 'train_dataset'         # Directory for training data
+  test_dir: 'test_dataset'           # Directory for test data
+  validation_dir: 'validation_dataset' # Directory for validation data
+  batch_size: 32                     # Batch size for training
+  target_size: [128, 128]            # Image resizing dimensions
+  preprocessing_function: 'resnet_preprocess' # Function for preprocessing images
 
 tuning:
-  perform_tuning: False  # Set to false to skip hyperparameter tuning
+  perform_tuning: False              # Toggle for performing hyperparameter tuning
+  max_trials: 5                      # Maximum number of tuning trials
+  executions_per_trial: 1            # Number of executions per tuning trial
 
 training:
-  initial_epochs: 2
-  fine_tune_epochs: 2
-  fine_tune_learning_rate: 1e-5  # Lower learning rate for fine-tuning
-  patience: 5
-  target_accuracy: 0.99 
-  find_lr: False
-  model_checkpoint_path: 'checkpoint.h5.keras'
+  initial_epochs: 25                 # Number of initial epochs
+  fine_tune_epochs: 0                # Number of fine-tuning epochs
+  patience: 5                        # Early stopping patience
+  target_accuracy: 0.99              # Desired target accuracy
+  find_lr: False                     # Enable learning rate finder
+  model_checkpoint_path: 'checkpoint.h5.keras' # Path for saving the model checkpoint
 
-tuner:
-  max_trials: 5
-  executions_per_trial: 1
-
-# Hyperparameters for pre-trained models
-#
 hyperparameters:
-  learning_rate_pretrained:
-    min: 1e-5
-    max: 1e-3
-    default: 1e-4
-  learning_rate:
-    min: 1e-4
-    max: 1e-2
-    default: 1e-3
-  dense_units:
-    min: 128
-    max: 1024
-    step: 128
-    default: 128
-  dropout_rate:
-    min: 0.0
-    max: 0.7
-    step: 0.1
-    default: 0.1
-  unfreeze_layers:
-    min: 0
-    max: 100
-    step: 10
-    default: 0
-  optimizer:
-    choices: ['adam', 'sgd']
-    default: 'adam'
+  pretrained_model:                  # Hyperparameters for pre-trained models
+    learning_rate:
+      min: 1e-5
+      max: 1e-3
+      default: 1e-4
+    dense_units:
+      min: 128
+      max: 1024
+      step: 128
+      default: 128
+    dropout_rate:
+      min: 0.0
+      max: 0.7
+      step: 0.1
+      default: 0.1
+    optimizer:
+      choices: ['adam', 'sgd']
+      default: 'adam'
 
-  # Hyperparameters for scratch models
-  #
-  dense_units_scratch:
-    min: 64
-    max: 512
-    step: 64
-    default: 128
-  dropout_rate_scratch:
-    min: 0.1
-    max: 0.5
-    step: 0.1
-    default: 0.3
-  learning_rate_scratch:
-    min: 1e-5
-    max: 1e-2
-    default: 1e-3
-  optimizer_scratch:
-    choices: ['adam', 'sgd']
-    default: 'adam'
+  scratch_model:                     # Hyperparameters for scratch models
+    learning_rate_scratch:
+      min: 1e-5
+      max: 1e-2
+      default: 1e-3
+    dense_units_scratch:
+      min: 64
+      max: 512
+      step: 64
+      default: 128
+    dropout_rate_scratch:
+      min: 0.1
+      max: 0.5
+      step: 0.1
+      default: 0.3
+    optimizer_scratch:
+      choices: ['adam', 'sgd']
+      default: 'adam'
 
 reduce_lr_on_plateau:
-  monitor: 'val_loss' # Metric to monitor
-  factor: 0.2         # Factor by which the learning rate will be reduced
-  patience: 10        # Number of epochs with no improvement after which learning rate will be reduced
-  min_lr: 1e-6        # Lower bound on the learning rate
-  verbose: 1          # Verbosity mode, 0 or 1
+  monitor: 'val_loss'                # Metric to monitor for reducing LR
+  factor: 0.2                        # Factor to reduce LR by
+  patience: 10                       # Patience before reducing LR
+  min_lr: 1e-6                       # Minimum learning rate allowed
+  verbose: 1                         # Verbosity level for logging LR changes
 
 visualization:
-  figure_size: [12, 4]
-  history_plot_path: 'history_plot.png'
+  figure_size: [12, 4]               # Size of the training history plot
+  history_plot_path: 'history_plot.png' # Path for saving the training history plot
 
 gpu:
-  memory_growth: true
-  allow_growth: true
+  memory_growth: true                # Allow GPU memory growth
+  allow_growth: true                 # Allow dynamic GPU memory allocation
 
 # ARCHITECTURES = {
 #   'ResNet50V2': ResNet50V2,
