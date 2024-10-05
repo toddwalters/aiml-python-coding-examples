@@ -10,6 +10,7 @@
 # temporary data sets
 boat_type_classification_dataset/
 checkpoint.*
+*.keras
 hyperparameter_tuning/
 
 # Byte-compiled / optimized / DLL files
