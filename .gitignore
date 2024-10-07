@@ -10,7 +10,6 @@
 # temporary data sets
 boat_type_classification_dataset/
 checkpoint.*
-*.h5
 *.keras
 hyperparameter_tuning/
 
