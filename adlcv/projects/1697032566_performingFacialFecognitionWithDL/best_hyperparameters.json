@@ -1,0 +1,13 @@
+{
+    "num_conv_layers": 3,
+    "conv_filters_scratch": 32,
+    "conv_kernel_size_scratch": 3,
+    "use_conv_batch_norm_scratch": false,
+    "conv_dropout_rate_scratch": 0.0,
+    "num_dense_layers_scratch": 2,
+    "dense_units_scratch": 128,
+    "dropout_rate_scratch": 0.3,
+    "use_dense_batch_norm_scratch": false,
+    "learning_rate_scratch": 0.0003,
+    "optimizer_scratch": "adam"
+}
