@@ -3,13 +3,13 @@ logging:
   log_level: 'CRITICAL'      # Logging level
 
 model:
-  name: 'VGG16'                            # Model name
-  preprocessing_function: 'vgg_preprocess'   # Function for preprocessing images
-  use_pretrained_weights: True                 # Use pre-trained weights or not
-  input_shape: [224, 224, 3]                    # Input image dimensions
+  name: 'ResNet50V2'                            # Model name
+  preprocessing_function: 'resnet_preprocess'   # Function for preprocessing images
+  use_pretrained_weights: False                 # Use pre-trained weights or not
+  input_shape: [128, 128, 3]                    # Input image dimensions
   dense_units: 128                              # Units in the dense layer
   dropout_rate: 0.3                             # Dropout rate
-  initial_learning_rate: 0.001                  # Initial learning rate
+  initial_learning_rate: 0.0003                 # Initial learning rate
   decay_steps: 100                              # Learning rate decay steps
   decay_rate: 0.96                              # Learning rate decay rate
   fine_tune_learning_rate: 1e-5                 # Learning rate for fine-tuning
@@ -22,13 +22,13 @@ model:
 
 augmentation:
   enabled: True                      # Toggle to enable/disable data augmentation
-  rotation_range: 10                 # Rotation in degrees (<= 360)
-  width_shift_range: 0.2             # Width shift fraction (<= 1.0)
-  height_shift_range: 0.2            # Height shift fraction (<= 1.0)
+  rotation_range: 5                  # Rotation in degrees (<= 360)
+  width_shift_range: 0.1             # Width shift fraction (<= 1.0)
+  height_shift_range: 0.1            # Height shift fraction (<= 1.0)
   horizontal_flip: True              # Enable horizontal flipping
   vertical_flip: False               # Enable vertical flipping
   zoom_range: 0.2                    # Zoom range (<= 1.0)
-  brightness_range: 0.6              # Brightness adjustment
+  brightness_range: 0.8              # Brightness adjustment
   # contrast_range: 0.1              # adjust as needed
   # saturation_range: 0.1
   # hue_range: 0.05
@@ -44,10 +44,10 @@ data:
   train_dir: 'train_dataset'                  # Directory for training data
   test_dir: 'test_dataset'                    # Directory for test data
   validation_dir: 'val_dataset'               # Directory for validation data
-  color_mode: 'rgb'                     # Image color mode 'rgb' or 'grayscale'
-  batch_size: 16                              # Batch size for training
-  input_shape: [224, 224, 3]                   # Input image dimensions
-  target_size: [224, 224]                      # Image resizing dimensions
+  color_mode: 'grayscale'                     # Image color mode 'rgb' or 'grayscale'
+  batch_size: 64                              # Batch size for training
+  input_shape: [112, 92, 1]                   # Input image dimensions
+  target_size: [112, 92]                      # Image resizing dimensions
 
 tuning:
   perform_tuning: False              # Toggle for performing hyperparameter tuning
@@ -55,10 +55,10 @@ tuning:
   executions_per_trial: 1            # Number of executions per tuning trial
 
 training:
-  override: False                                # Use custom model training configuration
-  initial_epochs: 1000                          # Number of initial epochs
+  override: True                                # Use custom model training configuration
+  initial_epochs: 1000                           # Number of initial epochs
   fine_tune_epochs: 0                           # Number of fine-tuning epochs
-  patience: 50                                 # Early stopping patience
+  patience: 500                                  # Early stopping patience
   target_accuracy: 0.99                         # Desired target accuracy
   find_lr: False                                # Enable learning rate finder
   model_checkpoint_path: 'checkpoint.h5.keras'  # Path for saving the model checkpoint
@@ -87,7 +87,7 @@ hyperparameters:
     learning_rate:
       min: 1e-5
       max: 1e-3
-      default: 0.001
+      default: 0.0003
 
   scratch_model:
     num_conv_layers:
@@ -131,7 +131,7 @@ hyperparameters:
     learning_rate_scratch:
       min: 1e-5
       max: 1e-2
-      default: 0.001
+      default: 0.0003
 
 reduce_lr_on_plateau:
   monitor: 'val_loss'                # Metric to monitor for reducing LR
@@ -139,6 +139,10 @@ reduce_lr_on_plateau:
   patience: 20                       # Patience before reducing LR
   min_lr: 1e-6                       # Minimum learning rate allowed
   verbose: 1                         # Verbosity level for logging LR changes
+
+visualization:
+  figure_size: [12, 4]               # Size of the training history plot
+  history_plot_path: 'history_plot.png' # Path for saving the training history plot
 
 gpu:
   memory_growth: true                # Allow GPU memory growth
