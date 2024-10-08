@@ -1,7 +1,7 @@
 logging:
   log_dir: 'logs'
   log_file: '1697032566-training.log'            # Directory for saving logs
-  log_level: 'CRITICAL'      # Logging level
+  log_level: 'INFO'      # Logging level
 
 model:
   name: 'VGG16'                            # Model name
