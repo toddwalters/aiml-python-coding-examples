@@ -1,5 +1,6 @@
 logging:
-  log_dir: 'logs'            # Directory for saving logs
+  log_dir: 'logs'
+  log_file: '1697032566-training.log'            # Directory for saving logs
   log_level: 'CRITICAL'      # Logging level
 
 model:
@@ -56,9 +57,9 @@ tuning:
 
 training:
   override: False                                # Use custom model training configuration
-  initial_epochs: 1000                          # Number of initial epochs
+  initial_epochs: 2                          # Number of initial epochs
   fine_tune_epochs: 0                           # Number of fine-tuning epochs
-  patience: 50                                 # Early stopping patience
+  patience: 2                                 # Early stopping patience
   target_accuracy: 0.99                         # Desired target accuracy
   find_lr: False                                # Enable learning rate finder
   model_checkpoint_path: 'checkpoint.h5.keras'  # Path for saving the model checkpoint
