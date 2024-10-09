@@ -62,7 +62,7 @@ training:
   patience: 2                                 # Early stopping patience
   target_accuracy: 0.99                         # Desired target accuracy
   find_lr: False                                # Enable learning rate finder
-  model_checkpoint_path: 'checkpoint.h5.keras'  # Path for saving the model checkpoint
+  model_checkpoint_path: 'checkpoints/checkpoint.h5.keras'  # Path for saving the model checkpoint
 
 hyperparameters:
   pretrained_model:                  # Hyperparameters for pre-trained models
