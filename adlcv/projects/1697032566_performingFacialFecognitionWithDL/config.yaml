@@ -43,14 +43,14 @@ data:
   pre_split: False                            # Pre-split dataset directories or not
   test_val_size: 0.4                          # Test+Val dataset size in percentage of total dataset
   test_val_split: 0.5                         # Test and Validation split ratio of test_val_size (0.5 = 50%)
-  dataset_dir: 'att_faces_png'                    # Root dataset directory (used if pre_split=True)
+  dataset_dir: 'att_faces'                    # Root dataset directory (used if pre_split=True)
   train_dir: 'train_dataset'                  # Directory for training data
   test_dir: 'test_dataset'                    # Directory for test data
   validation_dir: 'val_dataset'               # Directory for validation data
-  color_mode: 'rgb'                     # Image color mode 'rgb' or 'grayscale'
-  batch_size: 8                              # Batch size for training
-  input_shape: [224, 224, 3]                   # Input image dimensions
-  target_size: [224, 224]                      # Image resizing dimensions
+  color_mode: 'rgb'                           # Image color mode 'rgb' or 'grayscale'
+  batch_size: 8                               # Batch size for training
+  input_shape: [224, 224, 3]                  # Input image dimensions
+  target_size: [224, 224]                     # Image resizing dimensions
 
 tuning:
   perform_tuning: False              # Toggle for performing hyperparameter tuning
@@ -59,9 +59,9 @@ tuning:
 
 training:
   override: True                                # Use custom model training configuration
-  initial_epochs: 2                          # Number of initial epochs
+  initial_epochs: 100                          # Number of initial epochs
   fine_tune_epochs: 0                           # Number of fine-tuning epochs
-  patience: 2                                 # Early stopping patience
+  patience: 25                                 # Early stopping patience
   target_accuracy: 0.99                         # Desired target accuracy
   find_lr: False                                # Enable learning rate finder
   model_checkpoint_path: 'checkpoints/checkpoint.h5.keras'  # Path for saving the model checkpoint
