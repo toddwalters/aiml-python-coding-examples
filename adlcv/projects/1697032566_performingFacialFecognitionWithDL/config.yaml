@@ -1,16 +1,18 @@
 logging:
   log_dir: 'logs'
   log_file: '1697032566-training.log'            # Directory for saving logs
-  log_level: 'INFO'      # Logging level
+  log_level: 'DEBUG'                             # Logging level
 
 model:
-  name: 'VGG16'                            # Model name
-  preprocessing_function: 'vgg_preprocess'   # Function for preprocessing images
-  use_pretrained_weights: True                 # Use pre-trained weights or not
+  name: 'VGGFace'                               # Model name
+  base_name: 'VGG16'                            # Base model name
+  preprocessing_function: 'vgg_preprocess'      # Function for preprocessing images
+  use_pretrained_weights: True                  # Use pre-trained weights or not
   input_shape: [224, 224, 3]                    # Input image dimensions
   dense_units: 128                              # Units in the dense layer
-  dropout_rate: 0.3                             # Dropout rate
-  initial_learning_rate: 0.001                  # Initial learning rate
+  dropout_rate: 0.3
+  hidden_dims: 512                              # Dropout rate
+  initial_learning_rate: 0.0001                 # Initial learning rate
   decay_steps: 100                              # Learning rate decay steps
   decay_rate: 0.96                              # Learning rate decay rate
   fine_tune_learning_rate: 1e-5                 # Learning rate for fine-tuning
@@ -29,7 +31,7 @@ augmentation:
   horizontal_flip: True              # Enable horizontal flipping
   vertical_flip: False               # Enable vertical flipping
   zoom_range: 0.2                    # Zoom range (<= 1.0)
-  brightness_range: 0.6              # Brightness adjustment
+  brightness_range: 0.2              # Brightness adjustment
   # contrast_range: 0.1              # adjust as needed
   # saturation_range: 0.1
   # hue_range: 0.05
@@ -46,7 +48,7 @@ data:
   test_dir: 'test_dataset'                    # Directory for test data
   validation_dir: 'val_dataset'               # Directory for validation data
   color_mode: 'rgb'                     # Image color mode 'rgb' or 'grayscale'
-  batch_size: 16                              # Batch size for training
+  batch_size: 8                              # Batch size for training
   input_shape: [224, 224, 3]                   # Input image dimensions
   target_size: [224, 224]                      # Image resizing dimensions
 
@@ -56,7 +58,7 @@ tuning:
   executions_per_trial: 1            # Number of executions per tuning trial
 
 training:
-  override: False                                # Use custom model training configuration
+  override: True                                # Use custom model training configuration
   initial_epochs: 2                          # Number of initial epochs
   fine_tune_epochs: 0                           # Number of fine-tuning epochs
   patience: 2                                 # Early stopping patience
@@ -88,7 +90,7 @@ hyperparameters:
     learning_rate:
       min: 1e-5
       max: 1e-3
-      default: 0.001
+      default: 0.0001
 
   scratch_model:
     num_conv_layers:
@@ -132,7 +134,7 @@ hyperparameters:
     learning_rate_scratch:
       min: 1e-5
       max: 1e-2
-      default: 0.001
+      default: 0.0001
 
 reduce_lr_on_plateau:
   monitor: 'val_loss'                # Metric to monitor for reducing LR
@@ -145,7 +147,7 @@ gpu:
   memory_growth: true                # Allow GPU memory growth
   allow_growth: true                 # Allow dynamic GPU memory allocation
 
-# ARCHITECTURES = {
+# PRETRAINED_MODELS = {
 #   'ResNet50V2': ResNet50V2,
 #   'VGG16': VGG16,
 #   'InceptionV3': InceptionV3,
@@ -153,7 +155,7 @@ gpu:
 #   'EfficientNetB0': EfficientNetB0
 # }
 #
-# ARCHITECTURE_INPUT_SHAPES = {
+# PTM_INPUT_SHAPES = {
 #   'ResNet50V2': (128, 128, 3),
 #   'VGG16': (224, 224, 3),
 #   'InceptionV3': (299, 299, 3),
@@ -161,7 +163,7 @@ gpu:
 #   'EfficientNetB0': (224, 224, 3)
 # }
 #
-# PREPROCESSING_FUNCTIONS = {
+# PTM_PREPROCESSING_FUNCTIONS = {
 #   'ResNet50V2': resnet_preprocess,
 #   'VGG16': vgg_preprocess,
 #   'InceptionV3': inception_preprocess,
