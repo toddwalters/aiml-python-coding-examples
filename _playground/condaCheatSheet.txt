@@ -31,3 +31,28 @@ conda install keras-tuner
 conda install pip boto3 pandas ipykernel matplotlib pyyaml python-dotenv numpy
 pip install datetime
 pip install git+https://github.com/yaledhlab/vggface.git
+
+
+
+-------------
+CUDA Commands
+-------------
+Check CUDA Version:
+nvcc --version
+
+Check cuDNN Version:
+cat /usr/include/cudnn_version.h | grep CUDNN_MAJOR -A 2
+
+TensorFlow 2.11.0 Requirements:
+CUDA: 11.2
+cuDNN: 8.1
+
+Check GPU Memory Usage:
+nvidia-smi
+
+Monitor GPU Memory and Usage:
+watch -n 1 nvidia-smi
+
+import tensorflow as tf
+print("TensorFlow version:", tf.__version__)
+print("Num GPUs Available:", len(tf.config.list_physical_devices('GPU')))
