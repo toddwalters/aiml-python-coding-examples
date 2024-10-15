@@ -25,14 +25,14 @@ model:
 
 augmentation:
   enabled: True                      # Toggle to enable/disable data augmentation
-  rotation_range: 10                 # Rotation in degrees (<= 360)
+  rotation_range: 5                 # Rotation in degrees (<= 360)
   width_shift_range: 0.2             # Width shift fraction (<= 1.0)
   height_shift_range: 0.2            # Height shift fraction (<= 1.0)
   horizontal_flip: True              # Enable horizontal flipping
-  vertical_flip: False               # Enable vertical flipping
+  vertical_flip: True               # Enable vertical flipping
   zoom_range: 0.2                    # Zoom range (<= 1.0)
   brightness_range: 0.2              # Brightness adjustment
-  # contrast_range: 0.1              # adjust as needed
+  contrast_range: 0.1              # adjust as needed
   # saturation_range: 0.1
   # hue_range: 0.05
   # gaussian_blur: 0.5

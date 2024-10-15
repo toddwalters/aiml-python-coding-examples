@@ -1,0 +1,11 @@
+import tensorflow as tf
+
+strategy = tf.distribute.MirroredStrategy()
+print(f'Number of devices: {strategy.num_replicas_in_sync}')
+
+with strategy.scope():
+  model = tf.keras.Sequential([tf.keras.layers.Dense(1, input_shape=[1])])
+  model.compile(optimizer='sgd', loss='mean_squared_error')
+
+
+model.fit()
