@@ -2,16 +2,57 @@ conda install -c conda-forge python-dotenv
 # install packages in your new conda environment
 conda install pip boto3 pandas ipykernel
 conda install -c conda-forge opencv
-conda install matplotlib
-conda install pyyaml
+conda install matplotlib pyyaml
+
 # CPU Only Verion
-conda install -c conda-forge tensorflowsour
+conda install -c conda-forge tensorflow
 # GPU version
 conda install -c conda-forge tensorflow-gpu
 conda install -c conda-forge scikit-learn
 conda install  -c conda-forge keras-tuner
+
 # parse env name information from your new environment
 export CURRENT_ENV_NAME=$(conda info | grep "active environment" | cut -d : -f 2 | tr -d ' ')
 
 # register your new environment as Jupyter Kernel for execution 
 python3 -m ipykernel install --user --name $CURRENT_ENV_NAME --display-name "user-env:($CURRENT_ENV_NAME)"
+
+----------------------------------------------
+Setting Conda ENV with older version of python
+----------------------------------------------
+
+# Create a new environment with Python 3.9
+conda create -n tf_env python=3.8
+
+# Activate the environment
+conda activate tf_env
+conda install tensorflow
+conda install keras-tuner
+conda install pip boto3 pandas ipykernel matplotlib pyyaml python-dotenv numpy
+pip install datetime
+pip install git+https://github.com/yaledhlab/vggface.git
+
+
+
+-------------
+CUDA Commands
+-------------
+Check CUDA Version:
+nvcc --version
+
+Check cuDNN Version:
+cat /usr/include/cudnn_version.h | grep CUDNN_MAJOR -A 2
+
+TensorFlow 2.11.0 Requirements:
+CUDA: 11.2
+cuDNN: 8.1
+
+Check GPU Memory Usage:
+nvidia-smi
+
+Monitor GPU Memory and Usage:
+watch -n 1 nvidia-smi
+
+import tensorflow as tf
+print("TensorFlow version:", tf.__version__)
+print("Num GPUs Available:", len(tf.config.list_physical_devices('GPU')))

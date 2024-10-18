@@ -11,6 +11,7 @@
 boat_type_classification_dataset/
 checkpoint.*
 *.keras
+*.h5
 hyperparameter_tuning/
 
 # Byte-compiled / optimized / DLL files
