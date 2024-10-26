@@ -13,6 +13,7 @@ checkpoint.*
 *.keras
 *.h5
 hyperparameter_tuning/
+logs/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
