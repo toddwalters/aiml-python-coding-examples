@@ -47,8 +47,8 @@ data:
   validation_dir: 'val_dataset'               # Directory for validation data
   color_mode: 'grayscale'                     # Image color mode 'rgb' or 'grayscale'
   batch_size: 64                              # Batch size for training
-  input_shape: [26, 22, 1]                   # Input image dimensions
-  target_size: [26, 22]                      # Image resizing dimensions
+  input_shape: [112, 92, 1]                   # Input image dimensions
+  target_size: [112, 92]                      # Image resizing dimensions
 
 tuning:
   perform_tuning: False              # Toggle for performing hyperparameter tuning
@@ -57,7 +57,7 @@ tuning:
 
 training:
   override: True                                # Use custom model training configuration
-  initial_epochs: 20                           # Number of initial epochs
+  initial_epochs: 100                           # Number of initial epochs
   fine_tune_epochs: 0                           # Number of fine-tuning epochs
   patience: 10                                  # Early stopping patience
   target_accuracy: 0.99                         # Desired target accuracy
