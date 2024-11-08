@@ -3,7 +3,7 @@ logging:
   log_level: 'CRITICAL'      # Logging level
 
 model:
-  name: 'ResNet50V2'                            # Model name
+  name: 'Custom Model Training'                            # Model name
   preprocessing_function: 'resnet_preprocess'   # Function for preprocessing images
   use_pretrained_weights: False                 # Use pre-trained weights or not
   input_shape: [128, 128, 3]                    # Input image dimensions

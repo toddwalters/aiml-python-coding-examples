@@ -5,7 +5,7 @@ logging:
 
 model:
   name: 'VGG16'                            # Model name
-  preprocessing_function: 'resnet_preprocess'   # Function for preprocessing images
+  preprocessing_function: 'vgg_preprocess'   # Function for preprocessing images
   use_pretrained_weights: True                 # Use pre-trained weights or not
   input_shape: [224, 224, 3]                    # Input image dimensions
   dense_units: 128                              # Units in the dense layer
