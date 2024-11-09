@@ -1,7 +1,7 @@
 logging:
   log_dir: 'logs'            # Directory for saving logs
   log_file: '1697032566-training.log'    
-  log_level: 'INFO'      # Logging level
+  log_level: 'CRITICAL'      # Logging level
 
 model:
   name: 'VGG16'                            # Model name
@@ -41,7 +41,7 @@ data:
   pre_split: False                            # Pre-split dataset directories or not
   test_val_size: 0.4                          # Test+Val dataset size in percentage of total dataset
   test_val_split: 0.5                         # Test and Validation split ratio of test_val_size (0.5 = 50%)
-  dataset_dir: 'att_faces_png'                    # Root dataset directory (used if pre_split=True)
+  dataset_dir: 'att_faces_png_224x224x3'                    # Root dataset directory (used if pre_split=True)
   train_dir: 'train_dataset'                  # Directory for training data
   test_dir: 'test_dataset'                    # Directory for test data
   validation_dir: 'val_dataset'               # Directory for validation data
@@ -57,9 +57,9 @@ tuning:
 
 training:
   override: False                                # Use custom model training configuration
-  initial_epochs: 100                           # Number of initial epochs
+  initial_epochs: 150                           # Number of initial epochs
   fine_tune_epochs: 0                           # Number of fine-tuning epochs
-  patience: 20                                  # Early stopping patience
+  patience: 50                                  # Early stopping patience
   target_accuracy: 0.99                         # Desired target accuracy
   find_lr: False                                # Enable learning rate finder
   model_checkpoint_path: 'checkpoints/checkpoint.h5.keras'  # Path for saving the model checkpoint
