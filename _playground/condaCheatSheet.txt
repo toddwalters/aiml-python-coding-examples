@@ -1,7 +1,9 @@
-conda install -c conda-forge python-dotenv
+
+
 # install packages in your new conda environment
 conda install pip boto3 pandas ipykernel
 conda install -c conda-forge opencv
+conda install -c conda-forge python-dotenv
 conda install matplotlib pyyaml
 
 # CPU Only Verion
@@ -32,7 +34,82 @@ conda install pip boto3 pandas ipykernel matplotlib pyyaml python-dotenv numpy
 pip install datetime
 pip install git+https://github.com/yaledhlab/vggface.git
 
+# Install conda using a yaml configuration file
 
+conda env create -f environment.yml
+
+--------------------------
+environment.yml
+--------------------------
+
+name: kaggle-gcloud-genai
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10.14
+  - jupyter
+  - jupyterlab
+  - ipywidgets
+  - notebook
+  - tensorflow
+  - pytorch
+  - torchvision
+  - pytorch-lightning
+  - scikit-learn
+  - xgboost
+  - lightgbm
+  - catboost
+  - h2o
+  - optuna
+  - shap
+  - pandas
+  - numpy
+  - scipy
+  - statsmodels
+  - plotly
+  - seaborn
+  - spacy
+  - gensim
+  - nltk
+  - pillow
+  - scikit-image
+  - fastapi
+  - uvicorn
+  - flask
+  - apache-beam
+  - pip
+  - pip:
+    - eli5
+    - featuretools
+    - ydata-profiling
+    - prophet
+    - transformers
+    - accelerate
+    - datasets
+    - albumentations
+    - fastai
+    - opencv-python
+    - bigframes
+    - aiobotocore
+    - google-cloud-bigquery
+    - google-cloud-storage
+    - google-cloud-aiplatform
+    - google-cloud-translate
+    - google-cloud-vision
+    - google-cloud-language
+    - google-cloud-pubsub
+    - google-cloud-monitoring
+    - google-cloud-artifact-registry
+    - google-cloud-iam
+    - google-auth
+    - google-api-python-client
+    - google-auth-oauthlib
+    - google-auth-httplib2
+    - google-generativeai
+    - cloudpathlib
+
+-------------------------------------------------
 
 -------------
 CUDA Commands
