@@ -7,28 +7,33 @@ This guide provides essential commands and tips for managing Conda environments 
 - [Conda and CUDA Cheatsheet](#conda-and-cuda-cheatsheet)
   - [Introduction](#introduction)
   - [Table of Contents](#table-of-contents)
-  - [Installing Packages](#installing-packages)
-  - [Creating Conda Environments](#creating-conda-environments)
-    - [Basic Environment Creation](#basic-environment-creation)
-    - [Example: Environment with Python 3.8](#example-environment-with-python-38)
-  - [Using a Conda Configuration File](#using-a-conda-configuration-file)
-    - [Create Environment from YAML](#create-environment-from-yaml)
-    - [Export Environment to YAML](#export-environment-to-yaml)
-  - [Setting up CUDA for TensorFlow](#setting-up-cuda-for-tensorflow)
-    - [Install CUDA Toolkit](#install-cuda-toolkit)
-    - [Verify CUDA Installation](#verify-cuda-installation)
-  - [Checking TensorFlow Versions and GPUs](#checking-tensorflow-versions-and-gpus)
-    - [Check TensorFlow Version](#check-tensorflow-version)
-    - [Verify GPU Detection](#verify-gpu-detection)
-  - [Troubleshooting](#troubleshooting)
-    - [Common Issues and Fixes](#common-issues-and-fixes)
-  - [Helpful Commands](#helpful-commands)
-    - [Delete a Conda Environment](#delete-a-conda-environment)
-    - [Register Conda Environment for Jupyter](#register-conda-environment-for-jupyter)
-    - [Update Conda Environment](#update-conda-environment)
-  - [References](#references)
+  - [Conda Cheatsheet](#conda-cheatsheet)
+    - [__Installing Packages__](#installing-packages)
+    - [__Creating Conda Environments__](#creating-conda-environments)
+      - [__Basic Environment Creation__](#basic-environment-creation)
+      - [__Example: Environment with Python 3.8__](#example-environment-with-python-38)
+      - [__Using a Conda Configuration File__](#using-a-conda-configuration-file)
+      - [__Create Environment from YAML__](#create-environment-from-yaml)
+      - [__Export Environment to YAML__](#export-environment-to-yaml)
+      - [__Delete a Conda Environment__](#delete-a-conda-environment)
+      - [__Register Conda Environment for Jupyter__](#register-conda-environment-for-jupyter)
+      - [__Update Conda Environment__](#update-conda-environment)
+  - [CUDA Cheatsheet](#cuda-cheatsheet)
+    - [__Setting up CUDA for TensorFlow__](#setting-up-cuda-for-tensorflow)
+    - [__Check the CUDA and cuDNN version__](#check-the-cuda-and-cudnn-version)
+    - [__Install CUDA Toolkit__](#install-cuda-toolkit)
+    - [__Verify CUDA Installation__](#verify-cuda-installation)
+    - [__Checking TensorFlow Versions and GPUs__](#checking-tensorflow-versions-and-gpus)
+      - [__Check TensorFlow Version__](#check-tensorflow-version)
+      - [__Verify GPU Detection__](#verify-gpu-detection)
+    - [__Troubleshooting__](#troubleshooting)
+      - [__Common Issues and Fixes__](#common-issues-and-fixes)
+    - [__References__](#references)
 
-## Installing Packages
+## Conda Cheatsheet
+
+### __Installing Packages__
+
 To install packages in your new Conda environment, use the following commands:
 
 ```bash
@@ -49,8 +54,9 @@ conda install -c conda-forge scikit-learn
 conda install -c conda-forge keras-tuner
 ```
 
-## Creating Conda Environments
-### Basic Environment Creation
+### __Creating Conda Environments__
+
+#### __Basic Environment Creation__
 
 ```bash
 # Create a new Conda environment with a specific Python version
@@ -60,7 +66,8 @@ conda create -n my_env python=3.9
 conda activate my_env
 ```
 
-### Example: Environment with Python 3.8
+#### __Example: Environment with Python 3.8__
+
 ```bash
 # Create a new environment with Python 3.8
 conda create -n tf_env python=3.8
@@ -74,7 +81,8 @@ pip install datetime
 pip install git+https://github.com/yaledhlab/vggface.git
 ```
 
-## Using a Conda Configuration File
+#### __Using a Conda Configuration File__
+
 You can define a YAML configuration file to create a Conda environment. Here is an example:
 
 **environment.yml**:
@@ -99,17 +107,44 @@ dependencies:
     - datetime
 ```
 
-### Create Environment from YAML
+#### __Create Environment from YAML__
+
 ```bash
 conda env create -f environment.yml
 ```
 
-### Export Environment to YAML
+#### __Export Environment to YAML__
+
 ```bash
 conda env export > environment.yml
 ```
 
-## Setting up CUDA for TensorFlow
+#### __Delete a Conda Environment__
+
+```bash
+conda env remove --name my_env
+```
+
+#### __Register Conda Environment for Jupyter__
+
+```bash
+# Parse active environment name
+export CURRENT_ENV_NAME=$(conda info | grep "active environment" | cut -d : -f 2 | tr -d ' ')
+
+# Register the environment as a Jupyter kernel
+python3 -m ipykernel install --user --name $CURRENT_ENV_NAME --display-name "user-env:($CURRENT_ENV_NAME)"
+```
+
+#### __Update Conda Environment__
+
+```bash
+conda env update --file environment.yml --prune
+```
+
+## CUDA Cheatsheet
+
+### __Setting up CUDA for TensorFlow__
+
 Ensure compatibility between TensorFlow, CUDA, and cuDNN versions. Use the table below as a reference:
 
 | TensorFlow Version | CUDA Version | cuDNN Version |
@@ -125,7 +160,7 @@ To determine the compatibility between TensorFlow versions and specific CUDA and
 
 By consulting these resources, you can identify the appropriate CUDA and cuDNN versions compatible with your desired TensorFlow version, ensuring a smooth setup for your machine learning environment.
 
-Check the CUDA version:
+### __Check the CUDA and cuDNN version__
 
 ```zsh
 cat /usr/local/cuda/version.txt
@@ -137,23 +172,28 @@ and cuDNN version:
 grep CUDNN_MAJOR -A 2 /usr/local/cuda/include/cudnn.h
 ```
 
-### Install CUDA Toolkit
+### __Install CUDA Toolkit__
+
 ```bash
 conda install -c conda-forge cudatoolkit=11.2
 ```
 
-### Verify CUDA Installation
+### __Verify CUDA Installation__
+
 ```bash
 nvcc --version
 ```
 
-## Checking TensorFlow Versions and GPUs
-### Check TensorFlow Version
+### __Checking TensorFlow Versions and GPUs__
+
+#### __Check TensorFlow Version__
+
 ```bash
 python -c "import tensorflow as tf; print(tf.__version__)"
 ```
 
-### Verify GPU Detection
+#### __Verify GPU Detection__
+
 ```bash
 # Check if TensorFlow can detect GPUs
 python -c "import tensorflow as tf; print(tf.config.list_physical_devices('GPU'))"
@@ -162,8 +202,10 @@ python -c "import tensorflow as tf; print(tf.config.list_physical_devices('GPU')
 nvidia-smi
 ```
 
-## Troubleshooting
-### Common Issues and Fixes
+### __Troubleshooting__
+
+#### __Common Issues and Fixes__
+
 - **GPU Not Detected**:
   - Ensure the correct version of CUDA Toolkit is installed.
   - Verify `nvidia-smi` outputs GPU details.
@@ -174,27 +216,8 @@ nvidia-smi
 - **Conflicts Between Conda and Pip**:
   - Prefer installing most packages via Conda. Use pip only when necessary and after installing Conda packages.
 
-## Helpful Commands
-### Delete a Conda Environment
-```bash
-conda env remove --name my_env
-```
+### __References__
 
-### Register Conda Environment for Jupyter
-```bash
-# Parse active environment name
-export CURRENT_ENV_NAME=$(conda info | grep "active environment" | cut -d : -f 2 | tr -d ' ')
-
-# Register the environment as a Jupyter kernel
-python3 -m ipykernel install --user --name $CURRENT_ENV_NAME --display-name "user-env:($CURRENT_ENV_NAME)"
-```
-
-### Update Conda Environment
-```bash
-conda env update --file environment.yml --prune
-```
-
-## References
 - [Conda Documentation](https://docs.conda.io/)
 - [CUDA Toolkit Installation Guide](https://developer.nvidia.com/cuda-toolkit)
 - [TensorFlow GPU Support](https://www.tensorflow.org/install/gpu)
