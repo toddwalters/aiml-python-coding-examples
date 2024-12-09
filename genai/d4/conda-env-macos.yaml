@@ -1,4 +1,4 @@
-name: ggl-colab-genai-macos-20241208
+name: m2-macos-genai-20241208
 channels:
   - conda-forge
   - defaults
@@ -10,26 +10,11 @@ dependencies:
   - pip
   - numpy
   - pandas
-  - scipy
-  - scikit-learn
   - matplotlib
-  - seaborn
   - ipython
   - jupyterlab
-  - pytorch
-  - torchvision
-  - torchaudio
-  - flask
-  - requests
-  - transformers
-  - huggingface_hub
-  - nltk
-  - spacy
-  - tensorflow-probability
-  - xgboost
 
   # Additional dependencies not available via Conda
   - pip:
-      - tensorflow-macos
-      - tensorflow-metal
-      - en-core-web-sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.7.1/en_core_web_sm-3.7.1-py3-none-any.whl#sha256=86cc141f63942d4b2c5fcee06630fd6f904788d2f0ab005cce45aadb8fb73889
+      - tensorflow-macos==2.13.0
+      - tensorflow-metal==0.8.0
