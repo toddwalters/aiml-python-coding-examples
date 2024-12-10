@@ -1,4 +1,4 @@
-name: gan-genai-linux-20241209-v6
+name: gan-genai-linux-20241209-v9
 channels:
   - pytorch
   - conda-forge
@@ -13,12 +13,12 @@ dependencies:
   - numpy
   - pandas
   - matplotlib
-  - ipython
-  - jupyterlab
+  # - ipython
+  # - jupyterlab
   
   - pip:
     - "tensorflow[and-cuda]==2.13"
     - "keras==2.13.*"
-    - tensorrt
-    - tensorrt-lean
-    - tensorrt-dispatch
+    # - tensorrt
+    # - tensorrt-lean
+    # - tensorrt-dispatch
