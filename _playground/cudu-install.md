@@ -19,9 +19,11 @@
 
 ## Packages to Install
 
+Install NVIDIA drivers
+My recommended version is 525, adapt to yours
+
 ```zsh
-sudo apt-get install tensorrt
-sudo apt-get install python3-libnvinfer-dev
+sudo apt install nvidia-driver-525
 ```
 
 ## OS Details
