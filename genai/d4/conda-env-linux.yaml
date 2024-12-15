@@ -1,0 +1,24 @@
+name: gan-genai-linux-20241209-v11
+channels:
+  # - pytorch
+  - conda-forge
+  - defaults
+dependencies:
+  # Core Python version
+  - python=3.10
+  # - pytorch
+  # - torchvision
+  # - torchaudio
+  - pip
+  - numpy
+  - pandas
+  - matplotlib
+  # - ipython
+  # - jupyterlab
+  
+  - pip:
+    - "tensorflow[and-cuda]==2.13"
+    - "keras==2.13.*"
+    # - tensorrt
+    # - tensorrt-lean
+    # - tensorrt-dispatch

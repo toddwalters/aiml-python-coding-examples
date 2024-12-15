@@ -24,7 +24,7 @@ This guide provides essential commands and tips for managing Conda environments 
     - [__Install CUDA Toolkit__](#install-cuda-toolkit)
     - [__Verify CUDA Installation__](#verify-cuda-installation)
     - [__Checking TensorFlow Versions and GPUs__](#checking-tensorflow-versions-and-gpus)
-      - [__Check TensorFlow Version__](#check-tensorflow-version)
+      - [__Check TensorFlow and Keras Versions__](#check-tensorflow-and-keras-versions)
       - [__Verify GPU Detection__](#verify-gpu-detection)
     - [__Troubleshooting__](#troubleshooting)
       - [__Common Issues and Fixes__](#common-issues-and-fixes)
@@ -186,10 +186,12 @@ nvcc --version
 
 ### __Checking TensorFlow Versions and GPUs__
 
-#### __Check TensorFlow Version__
+#### __Check TensorFlow and Keras Versions__
 
 ```bash
-python -c "import tensorflow as tf; print(tf.__version__)"
+python -c "import tensorflow as tf; print('Tensorflow Version: ', tf.__version__)"
+python -c "import keras; print('Keras Version: ', keras.__version__)"
+python -c "from tensorflow.keras.models import Sequential, Model"
 ```
 
 #### __Verify GPU Detection__
