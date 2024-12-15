@@ -1,0 +1,101 @@
+HCP_ID,Name,Specialty,Location,Hospital_Affiliation,Years_of_Experience,Patient_Count,Engagement_Score,Email,Phone_Number,Last_Interaction_Date,Preferred_Contact_Method,Compliance_Flag,Associated_Brand,Region
+HCP-0001,Steven Smith,Psychiatry,"Jesseport, Hawaii","Moore, Watson and Bowers Hospital",34,236,6.4,vmitchell@lloyd.net,(049)816-6237,2024-02-04,In-person,Yes,HealthFirst,North America
+HCP-0002,Carla Mcdonald,Orthopedics,"Josephport, Mississippi","Reyes, Salazar and Johnson Hospital",26,135,4.1,terrimcintyre@yahoo.com,325-614-4660,2022-12-22,Phone,Yes,CarePoint,South America
+HCP-0003,Larry Pineda,Cardiology,"Greenmouth, South Dakota",Briggs-Clark Hospital,31,446,9.3,mperez@elliott-hunt.info,354-084-9661x901,2023-05-13,Email,No,CarePoint,Asia
+HCP-0004,Eric Clark,Orthopedics,"Brittanyside, Connecticut","Glenn, Ward and Jenkins Hospital",30,274,1.3,jessicareynolds@yahoo.com,(610)476-0137x24593,2024-07-27,In-person,Yes,HealthFirst,Africa
+HCP-0005,Jonathan Montgomery,Cardiology,"Lake Matthew, Kansas","Patrick, Hall and James Hospital",28,461,9.1,oscott@mccarty.net,(547)234-7306,2024-04-29,Phone,No,CarePoint,Europe
+HCP-0006,Charles Ellis,Oncology,"East Mauriceville, Florida",Snyder-Rodriguez Hospital,9,220,1.4,anthonyfrederick@hotmail.com,605.140.8575x41702,2024-09-07,In-person,No,HealthFirst,South America
+HCP-0007,Cheyenne Booth,Cardiology,"South Valeriefurt, Pennsylvania",Stewart Ltd Hospital,40,469,6.2,torresaustin@hotmail.com,(778)106-4277x186,2024-05-27,Email,Yes,CarePoint,South America
+HCP-0008,John Key,Neurology,"Annemouth, Massachusetts",Berry LLC Hospital,20,494,8.4,james91@mendoza.com,2137676228,2024-12-03,In-person,No,MediCare,Asia
+HCP-0009,Alexander Davis,Cardiology,"Jamiechester, Wyoming","Collier, Garner and Fletcher Hospital",7,448,6.3,cherylharris@yahoo.com,(669)491-3584x021,2024-07-14,Phone,Yes,MediCare,Europe
+HCP-0010,Terry Mckinney,Dermatology,"Whitneyhaven, Delaware",Zamora-Ramos Hospital,28,350,3.4,kmills@hardin.com,(012)784-2764,2024-02-19,Phone,No,HealthFirst,Europe
+HCP-0011,Meghan Williams,Oncology,"Dawnland, New Jersey",Fowler and Sons Hospital,8,415,5.9,owood@gmail.com,515.665.2277,2023-06-14,Phone,No,HealthBridge,Asia
+HCP-0012,Whitney Brown,Oncology,"Michaelton, Georgia","Stevens, Hall and Lee Hospital",24,252,5.8,jgutierrez@yahoo.com,143.063.1358x436,2024-01-30,Email,Yes,LifeLine,Asia
+HCP-0013,Ashley Dickson,Cardiology,"Jasonfort, Maine",Lee LLC Hospital,3,489,5.3,xmartin@yahoo.com,001-867-256-2103x45973,2024-10-05,Email,No,WellnessPro,South America
+HCP-0014,Kristen Williams,Orthopedics,"Bryanside, Missouri","Henderson, Miller and Cook Hospital",12,76,7.7,brenda65@hotmail.com,090.482.2411x739,2023-07-02,Phone,No,HealthFirst,Africa
+HCP-0015,Steven Cruz,Dermatology,"Port Mark, Kentucky",Evans-Stewart Hospital,19,292,7.9,jcole@gonzalez-drake.org,733.004.2324x3030,2023-03-11,Email,No,LifeLine,Australia
+HCP-0016,Peter Fields,Pediatrics,"Katieberg, Washington",Miller-Graves Hospital,11,185,6.5,lferguson@gmail.com,001-028-670-6879x5221,2023-10-06,Email,No,HealthBridge,Europe
+HCP-0017,Kurt Chaney,Psychiatry,"Ramirezmouth, New York",Bishop Group Hospital,31,86,5.9,rachel78@hotmail.com,2609578599,2023-04-11,Phone,No,LifeLine,Asia
+HCP-0018,Robert Allen,Dermatology,"New Erika, Connecticut","Harper, Rasmussen and Boyd Hospital",26,122,4.2,cbaldwin@yahoo.com,047.092.0240x309,2023-09-20,Phone,No,CarePoint,North America
+HCP-0019,Noah Thomas,Neurology,"Port Michael, Tennessee",Morrison Ltd Hospital,26,261,3.9,brittney33@walton.org,+1-460-410-6715x507,2023-12-05,Email,No,WellnessPro,North America
+HCP-0020,Patricia Diaz,Neurology,"New Stephen, Kansas",Smith-Ramirez Hospital,21,400,4.1,ereed@morgan.com,(902)685-1246x959,2024-03-31,In-person,No,LifeLine,Europe
+HCP-0021,Vanessa Phillips,Cardiology,"North Frederickmouth, Maryland","Adams, Hopkins and Morton Hospital",26,113,9.6,olsenkelly@hotmail.com,(144)546-0321x6604,2023-07-08,In-person,Yes,LifeLine,Asia
+HCP-0022,James Elliott,Cardiology,"Lake Normashire, New Hampshire",Norton-Gibson Hospital,25,179,9.3,thomaskaren@hughes-cortez.net,(941)751-8091,2024-11-28,Phone,Yes,HealthBridge,Australia
+HCP-0023,Jeremy Stokes,Oncology,"Thorntonshire, New Hampshire",Barrett PLC Hospital,22,265,5.7,josephmatthew@jenkins.com,+1-165-849-5749x881,2023-07-19,Phone,Yes,MediCare,Africa
+HCP-0024,Helen Armstrong,Pediatrics,"South Natalie, North Dakota",Norman-Phelps Hospital,37,241,9.6,davidsonrandy@hotmail.com,(602)623-5061x43118,2023-12-21,Phone,Yes,HealthBridge,North America
+HCP-0025,Jennifer Ward,Neurology,"West Beverly, Minnesota",Miller-Greene Hospital,24,116,2.3,keith41@moore.com,(456)293-0907,2023-01-06,Phone,No,WellnessPro,Europe
+HCP-0026,Melissa Brown,Psychiatry,"Micheleport, North Dakota",Moreno-Greer Hospital,16,347,1.4,jessicaharvey@yahoo.com,+1-114-435-0310x65019,2024-01-24,Phone,No,HealthBridge,Africa
+HCP-0027,Jill Robinson,Psychiatry,"South Sheilamouth, North Dakota",Blackwell-Allen Hospital,5,23,8.8,courtney65@martinez.com,+1-605-050-0865x316,2024-03-24,Phone,Yes,CarePoint,Africa
+HCP-0028,Daniel Jackson,Pediatrics,"Patriciaberg, Arkansas",Williams and Sons Hospital,4,45,9.3,ykoch@sims.net,148.911.2565,2024-11-03,Phone,No,LifeLine,Europe
+HCP-0029,Brenda Wagner,Oncology,"East Sharonview, Nevada","Smith, Trujillo and Thompson Hospital",6,99,5.6,priceapril@williams-kim.com,(315)790-9262,2023-05-20,Phone,Yes,WellnessPro,Africa
+HCP-0030,Dennis Lewis,Neurology,"East Brettport, Alaska",Lopez-Davis Hospital,30,31,3.9,amythompson@solis.com,728.248.5987x12655,2023-09-05,Email,Yes,WellnessPro,Africa
+HCP-0031,James Spencer,Psychiatry,"East Randyburgh, Indiana","Garcia, Jimenez and Gay Hospital",29,80,8.7,richard42@gmail.com,+1-209-185-3363x166,2024-08-21,Phone,Yes,LifeLine,Africa
+HCP-0032,Kristen Townsend,Neurology,"North Taylor, Michigan",Wilson-Kelly Hospital,39,32,4.6,scott11@black-whitaker.com,+1-310-641-7370x6364,2023-02-04,Phone,Yes,LifeLine,Africa
+HCP-0033,Jennifer Barrett,Orthopedics,"North Jennaville, Virginia",Moody Inc Hospital,1,276,7.9,mariebaker@perez.info,515.948.6674,2023-07-11,In-person,Yes,HealthBridge,South America
+HCP-0034,Sandra Lutz,Oncology,"East Michaelville, Nebraska","Nguyen, Kelley and Haley Hospital",2,434,5.8,stoutstephen@stevenson-larsen.com,(329)083-7531x8926,2024-10-03,Email,Yes,WellnessPro,Africa
+HCP-0035,Steven Patel,Cardiology,"Charlesstad, Delaware",Wright-Kelley Hospital,29,404,4.0,powellnicholas@yahoo.com,001-565-256-8382x8019,2023-07-05,Phone,Yes,WellnessPro,Asia
+HCP-0036,Alan Clarke,Cardiology,"Evansfort, Vermont","Levine, Jackson and Anderson Hospital",23,160,3.4,jameswilliams@hotmail.com,301-173-5657x4039,2023-01-05,Email,No,HealthBridge,South America
+HCP-0037,Morgan Howell,Neurology,"East Franklin, Oregon",Cooke-Escobar Hospital,1,54,7.3,ccohen@yahoo.com,882-367-2482x18394,2023-07-11,Phone,Yes,HealthFirst,Asia
+HCP-0038,Brenda Andrews,Neurology,"East Tammyland, Tennessee",Shelton-Smith Hospital,15,150,7.0,kristi47@wallace.com,969.248.7675,2024-04-05,Email,No,WellnessPro,Australia
+HCP-0039,Rachel Williams,Oncology,"Ruizfurt, Oklahoma","Smith, White and Hunter Hospital",24,489,7.1,leecline@hotmail.com,763-499-5132x84178,2024-11-12,Phone,No,CarePoint,South America
+HCP-0040,Mia West,Pediatrics,"West Brianton, New Hampshire",Osborne Inc Hospital,26,97,3.3,xdelgado@bowman-williamson.biz,694-318-6325,2023-11-08,Phone,No,LifeLine,Europe
+HCP-0041,Mary Baker,Pediatrics,"Elizabethtown, South Dakota","Smith, Silva and Koch Hospital",26,384,6.8,elizabeth44@gmail.com,472-270-2205,2023-11-15,Email,No,HealthBridge,Asia
+HCP-0042,Daniel Thompson,Dermatology,"New Maryport, Texas",Foster LLC Hospital,22,162,6.0,benjamin95@yahoo.com,001-366-207-8674,2024-02-13,Phone,No,CarePoint,Asia
+HCP-0043,Michael Terry,Pediatrics,"East Jeremyburgh, Washington",Kaiser PLC Hospital,35,379,8.5,myersjeffrey@yahoo.com,061-092-0170x7546,2024-06-13,In-person,No,LifeLine,Europe
+HCP-0044,Victoria Mills,Oncology,"Patriciatown, Washington","Henderson, Howard and Gonzalez Hospital",15,427,7.7,fsandoval@walsh.com,(135)920-5905,2022-12-24,Phone,Yes,LifeLine,North America
+HCP-0045,Michael Ellison,Pediatrics,"Reynoldsfurt, Nebraska",Stewart-Wilson Hospital,11,15,2.1,santosanthony@robbins.org,+1-082-430-2468x32049,2024-01-01,Phone,Yes,HealthBridge,Australia
+HCP-0046,William Meyer,Orthopedics,"Lake Danielfort, Rhode Island",Watson-Hill Hospital,29,494,9.1,sross@hotmail.com,462-112-5076x7531,2023-12-07,Email,Yes,WellnessPro,Asia
+HCP-0047,Blake King,Pediatrics,"Markmouth, South Carolina","Payne, Casey and Lewis Hospital",1,74,7.9,harrisgary@martin.net,216.954.5154x62011,2024-02-16,Phone,Yes,LifeLine,North America
+HCP-0048,Anna Pittman,Neurology,"West William, Montana",Atkinson-Cook Hospital,35,159,2.3,swagner@gmail.com,001-515-176-8736x54148,2023-10-21,Email,Yes,MediCare,North America
+HCP-0049,Michael Harrington,Oncology,"New Edward, Indiana",Johnson-Goodman Hospital,39,276,9.9,andreapearson@gmail.com,2519013054,2024-07-14,Email,No,LifeLine,Asia
+HCP-0050,Caitlin Walker,Dermatology,"Lake Travis, Vermont",Rogers Inc Hospital,18,289,3.6,uparker@yahoo.com,+1-773-331-7091x5714,2023-09-27,Phone,Yes,LifeLine,Asia
+HCP-0051,Tracy Nolan,Pediatrics,"Lake Tamara, New Mexico","Goodwin, Henson and Hardy Hospital",15,39,9.7,briana03@martin.com,133-610-8371x56865,2024-10-13,In-person,No,LifeLine,North America
+HCP-0052,Angela Haas,Oncology,"Welchborough, West Virginia",Hurst-Scott Hospital,11,141,8.9,xdavis@yahoo.com,285.708.7077,2024-05-29,Phone,No,HealthBridge,South America
+HCP-0053,Anna Perez,Oncology,"New Leonardburgh, Washington",Edwards PLC Hospital,32,482,7.6,rickybailey@yahoo.com,377-569-8322,2023-12-17,Phone,No,CarePoint,Asia
+HCP-0054,Michael Lloyd,Orthopedics,"Frazierport, Massachusetts","Warren, Brown and Bradley Hospital",12,319,6.0,jacobmartinez@yahoo.com,953-118-7707x8985,2024-12-14,Email,Yes,CarePoint,Asia
+HCP-0055,Mark Randall,Oncology,"Jenniferport, Texas",Berger LLC Hospital,8,11,3.7,lucasfitzpatrick@cantrell.net,(775)163-9048,2024-11-27,In-person,Yes,LifeLine,Africa
+HCP-0056,Matthew Jones,Orthopedics,"Stephenton, North Dakota",Whitaker-Johnson Hospital,7,218,2.5,nathan33@hotmail.com,001-321-894-4717x4313,2023-08-07,In-person,Yes,WellnessPro,Asia
+HCP-0057,Thomas Hoover,Dermatology,"Port Jasontown, South Carolina",Knox-Watkins Hospital,21,185,6.7,omurphy@harrison.com,758-988-3878x6689,2023-09-20,Phone,No,LifeLine,Australia
+HCP-0058,Edgar Jimenez,Cardiology,"Ericberg, Louisiana",Miller Group Hospital,35,305,1.2,austin11@gmail.com,+1-547-690-4200x131,2023-08-15,In-person,No,MediCare,North America
+HCP-0059,Aaron Brewer,Psychiatry,"Lake Michaelview, Wisconsin","Robinson, Mccarthy and Meyer Hospital",39,188,7.9,williamowens@yahoo.com,167-191-5257x7434,2024-02-21,Phone,Yes,HealthBridge,Australia
+HCP-0060,William Wyatt,Psychiatry,"Shannonbury, Mississippi",Romero PLC Hospital,4,24,9.6,erikedwards@gmail.com,+1-865-071-2359x2046,2024-06-30,Email,No,HealthBridge,South America
+HCP-0061,Jacob Tran,Cardiology,"East Kevin, New Jersey","Hunter, Baker and Price Hospital",1,111,8.4,becky56@hotmail.com,+1-828-760-8915x6313,2024-05-04,Email,Yes,MediCare,Africa
+HCP-0062,Mark Mccoy,Neurology,"Michaelfurt, Ohio","Cruz, Hendricks and Martinez Hospital",2,285,3.0,gibbsbrian@yahoo.com,145-944-3335,2023-02-22,Email,No,HealthFirst,Australia
+HCP-0063,Mr. Andrew Rosario,Dermatology,"Sharonland, Washington",Wheeler-Evans Hospital,18,54,4.5,rtorres@gmail.com,574.346.2795,2024-10-06,Email,No,LifeLine,North America
+HCP-0064,Edward Hill,Dermatology,"Allisonview, Wisconsin","Smith, Tucker and Rodriguez Hospital",6,344,8.9,espinozawilliam@yahoo.com,659-218-6303x715,2023-08-19,Email,No,LifeLine,Africa
+HCP-0065,Shannon Horn,Cardiology,"Schwartzmouth, Maine",Weiss-Thomas Hospital,5,295,3.2,hilljeffery@reynolds-singleton.net,001-373-596-0679x2156,2024-10-12,Email,No,WellnessPro,Asia
+HCP-0066,Victor Morrison,Cardiology,"Amyfurt, Georgia","Thompson, Morales and Gillespie Hospital",21,158,1.6,gerald99@powell-lewis.biz,(307)114-7706x5848,2023-05-24,Phone,No,HealthFirst,South America
+HCP-0067,Cole Bryant,Dermatology,"Kevinberg, Vermont","Brown, Brock and Terrell Hospital",5,293,5.6,angela16@crawford.com,294.633.7455x56969,2024-08-05,Phone,Yes,HealthFirst,South America
+HCP-0068,Jordan Dunn,Dermatology,"West Cindy, Rhode Island","Patel, Buck and Waller Hospital",37,224,4.1,egutierrez@friedman-horton.com,863.638.2252x706,2024-08-24,In-person,No,HealthFirst,North America
+HCP-0069,Theresa Herman,Cardiology,"North Jenniferfort, Mississippi","Chang, Cooke and Howell Hospital",34,16,5.9,anthony82@yahoo.com,263.737.6586x5119,2024-02-09,Phone,Yes,HealthFirst,North America
+HCP-0070,Brandon Todd,Orthopedics,"Hoodland, Hawaii",Moss LLC Hospital,20,214,8.3,johnsondenise@yahoo.com,660-225-6838,2023-01-31,Phone,No,WellnessPro,Asia
+HCP-0071,Alicia Romero,Pediatrics,"Andrewtown, Mississippi",Brown Ltd Hospital,29,423,8.1,joyce56@davis.info,3162215177,2023-03-01,Phone,Yes,WellnessPro,North America
+HCP-0072,Donna Anderson,Pediatrics,"Michaelborough, Vermont","Smith, Riley and Joyce Hospital",1,464,7.7,jeffrey52@snyder.com,+1-876-710-3476x7756,2024-09-01,Email,No,CarePoint,Africa
+HCP-0073,Brittany Singh,Psychiatry,"Port Gary, New Hampshire",Christensen Ltd Hospital,8,37,3.8,butlerangela@gmail.com,362-811-9558,2023-03-21,Phone,No,MediCare,Africa
+HCP-0074,John Green,Pediatrics,"Robertfort, Oregon",Evans Group Hospital,9,208,8.8,lwilson@hotmail.com,321-428-1291,2023-11-04,Phone,No,CarePoint,Europe
+HCP-0075,Daniel Davis,Orthopedics,"East Aaron, Iowa","Moody, Hill and Adams Hospital",28,237,9.1,nicolerobertson@hotmail.com,6375827325,2023-04-12,Phone,Yes,MediCare,North America
+HCP-0076,Sarah Smith,Orthopedics,"Jasonbury, Utah",Perry LLC Hospital,31,443,7.9,luishart@yahoo.com,202.636.3302,2024-04-22,Phone,Yes,MediCare,Africa
+HCP-0077,Lisa Barnes,Pediatrics,"Nguyenberg, Pennsylvania","Hopkins, Huynh and Stewart Hospital",8,213,2.6,kerryrivera@vasquez.org,475.459.1248x810,2023-10-27,Email,Yes,MediCare,Europe
+HCP-0078,Alejandro Li,Psychiatry,"Port Mariamouth, Oklahoma",Mullins-Caldwell Hospital,24,128,3.6,sullivandaniel@yahoo.com,0026338556,2023-12-25,Email,No,WellnessPro,Europe
+HCP-0079,Todd Morris,Psychiatry,"Robertton, Nebraska",Henderson-Robertson Hospital,25,477,8.4,joe09@yahoo.com,+1-514-374-4827x417,2024-07-29,Email,Yes,WellnessPro,Australia
+HCP-0080,Derrick Taylor,Cardiology,"West Sheliaview, New Mexico","Smith, Nelson and Montoya Hospital",20,323,2.6,tabitha88@thornton.net,(015)549-4709x189,2024-03-29,In-person,Yes,CarePoint,South America
+HCP-0081,Kim Brooks,Psychiatry,"Jessicamouth, Oklahoma","Petty, Clark and Wiley Hospital",31,230,7.9,kimberlygomez@mccullough-mendoza.com,1394191091,2024-09-25,In-person,Yes,WellnessPro,Africa
+HCP-0082,William Foster,Orthopedics,"Brianview, Wyoming","Johnson, Williams and Smith Hospital",8,98,8.4,johnsonemily@gmail.com,+1-966-611-6853x13942,2023-01-26,In-person,Yes,MediCare,South America
+HCP-0083,Nicholas Wells,Pediatrics,"Wrightstad, Ohio","Garcia, Owens and Knight Hospital",5,386,9.1,poliver@delgado.net,024.499.7118,2024-03-27,Email,No,CarePoint,North America
+HCP-0084,Marcus Lynch,Cardiology,"East Josephview, Nebraska",Reynolds Inc Hospital,26,84,3.2,qchapman@yahoo.com,(483)476-3702x5841,2023-07-28,In-person,No,HealthFirst,Africa
+HCP-0085,Alexander Vasquez,Cardiology,"South Michaelshire, Tennessee",Hart Ltd Hospital,16,229,9.3,cmurray@johnson.com,472.454.2542x117,2024-06-24,In-person,No,CarePoint,Asia
+HCP-0086,Michelle Moss,Neurology,"South Shaunville, Kentucky",Galloway-Lynn Hospital,9,323,2.4,ksnow@hotmail.com,038.182.8205x6182,2024-05-04,Email,Yes,HealthFirst,Asia
+HCP-0087,Richard Smith,Orthopedics,"Matthewsport, Pennsylvania","Benitez, Henry and Velez Hospital",2,315,2.7,wcontreras@reed.com,090-796-9359,2024-04-20,Email,No,CarePoint,Europe
+HCP-0088,Tiffany Greene,Neurology,"Allenport, North Dakota",Cook PLC Hospital,2,251,3.4,daniel97@fisher-gentry.com,001-222-633-5607x90603,2023-03-11,Email,Yes,WellnessPro,South America
+HCP-0089,Samantha Silva DVM,Neurology,"Lake Ethanbury, South Carolina",Petersen Ltd Hospital,29,318,9.6,zlee@gmail.com,(434)636-3644x65018,2024-02-16,In-person,No,CarePoint,Europe
+HCP-0090,Taylor Mays,Pediatrics,"Lake Kelly, Washington",Brown-Cole Hospital,1,139,7.1,ejordan@chang.com,6391411690,2024-09-27,Email,Yes,HealthBridge,Australia
+HCP-0091,Michelle Lawrence,Orthopedics,"Chapmanton, Wisconsin",Bennett Inc Hospital,5,475,7.1,sarahdavis@yahoo.com,635-810-4373x325,2024-10-09,Email,No,LifeLine,Europe
+HCP-0092,Frederick Hurst,Neurology,"Kennedyshire, Pennsylvania",Medina-Johnson Hospital,17,281,1.7,mhoffman@cooper.info,(007)306-1849,2024-09-05,In-person,Yes,HealthFirst,Australia
+HCP-0093,Louis Trevino,Pediatrics,"Stephenmouth, South Dakota",Young-Stein Hospital,21,77,1.5,dbarber@byrd-roman.com,+1-822-785-1972,2024-04-24,Email,Yes,WellnessPro,North America
+HCP-0094,Joseph French,Neurology,"Barbaraburgh, Delaware","Hebert, Goodwin and Casey Hospital",9,339,2.5,nicole64@hotmail.com,(890)936-3261,2024-03-23,Email,No,MediCare,North America
+HCP-0095,Isaac Campos,Cardiology,"Sandersland, Oklahoma",Valentine-Nguyen Hospital,17,82,3.8,edwardgrimes@boone.com,869.431.5349x682,2023-07-10,In-person,No,MediCare,South America
+HCP-0096,Nicole Smith,Orthopedics,"Tannertown, Louisiana",Pena and Sons Hospital,9,378,8.0,robert66@gmail.com,(085)221-9591,2024-02-26,Email,Yes,HealthFirst,Africa
+HCP-0097,Sheila Black,Pediatrics,"Chungland, Nevada",Calhoun-Silva Hospital,7,321,9.3,lindseybarron@hunter-bray.com,866.971.7126x816,2024-09-27,Email,No,CarePoint,Australia
+HCP-0098,James Fisher,Dermatology,"East Christopher, Michigan",Wilkinson Inc Hospital,37,398,1.3,johnstonanthony@johnson-erickson.info,(070)857-6107,2023-02-08,Phone,No,MediCare,Africa
+HCP-0099,Teresa Boyd,Oncology,"Alexismouth, North Carolina","Wallace, Harris and Owen Hospital",7,42,8.5,tonyarmstrong@yahoo.com,039-987-3866,2023-10-14,Email,Yes,LifeLine,Asia
+HCP-0100,Christopher Parker,Psychiatry,"Taraside, Wisconsin","Smith, Reynolds and Boone Hospital",9,390,1.4,youngrobert@hotmail.com,(782)460-9726,2024-06-24,In-person,Yes,CarePoint,South America
