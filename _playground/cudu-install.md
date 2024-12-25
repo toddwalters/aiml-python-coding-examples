@@ -6,24 +6,27 @@
 - [Your GPU Compute Capability](https://developer.nvidia.com/cuda-gpus)
   - [GeForce RTX 3060 Family](https://www.nvidia.com/en-us/geforce/graphics-cards/30-series/rtx-3060-3060ti/)
 - [CUDA Download - WSL-Ubuntu](https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&Distribution=WSL-Ubuntu&target_version=2.0&target_type=deb_network)
-- [NVIDIA CUDA Installation Guide for Linux - Pre-Installation Actions](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#pre-installation-actions)
-- [NVIDIA CUDA Installation Guide for Linux - Ubuntu Installation](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#prepare-ubuntu)
-- [NVIDIA CUDA Installation Guide for Linux - Post-Installation Actions](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#post-installation-actions)
-- [NVIDIA CUDA cuda-samples GitHub Repo](https://github.com/NVIDIA/cuda-samples/tree/master)
-  - [NVIDIA CUDA cuda-samples deviceQuery Utility](https://github.com/NVIDIA/cuda-samples/tree/master/Samples/1_Utilities/deviceQuery)
+  - [NVIDIA CUDA Installation Guide for Linux - Pre-Installation Actions](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#pre-installation-actions)
+  - [NVIDIA CUDA Installation Guide for Linux - Ubuntu Installation](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#prepare-ubuntu)
+  - [NVIDIA CUDA Installation Guide for Linux - Post-Installation Actions](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#post-installation-actions)
+  - [NVIDIA CUDA cuda-samples GitHub Repo](https://github.com/NVIDIA/cuda-samples/tree/master)
+    - [NVIDIA CUDA cuda-samples deviceQuery Utility](https://github.com/NVIDIA/cuda-samples/tree/master/Samples/1_Utilities/deviceQuery)
 - [cuDNN 9.6.0 Downloads](https://developer.nvidia.com/cudnn-downloads?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu&target_version=22.04&target_type=deb_local)
   - [Support Matrix GPU, CUDA Toolkit, and CUDA Driver Requirements](https://docs.nvidia.com/deeplearning/cudnn/latest/reference/support-matrix.html#f3)
 - [Tensor RT Installation Guide](https://docs.nvidia.com/deeplearning/tensorrt/install-guide/index.html)
   - [NVIDIA TensorRT 10.x Download](https://developer.nvidia.com/tensorrt/download/10x)
 
 
-## Packages to Install
+## Pre-Install Steps
 
-Install NVIDIA drivers
-My recommended version is 525, adapt to yours
+### Remove previous NVIDIA installation
+```shell
+sudo apt autoremove \*nvidia\* --purge # 
+```
 
-```zsh
-sudo apt install nvidia-driver-525
+### Update & upgrade
+```shell
+sudo apt update && sudo apt upgrade
 ```
 
 ## OS Details
@@ -47,7 +50,87 @@ cat /etc/os-release
   12   │ UBUNTU_CODENAME=jammy
 ```
 
-## My Device Details
+## Packages to Install
+
+### Install CUDA Toolkit
+
+- [CUDA Download - WSL-Ubuntu](https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&Distribution=WSL-Ubuntu&target_version=2.0&target_type=deb_network)
+  - [NVIDIA CUDA Installation Guide for Linux - Pre-Installation Actions](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#pre-installation-actions)
+  - [NVIDIA CUDA Installation Guide for Linux - Ubuntu Installation](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#prepare-ubuntu)
+  - [NVIDIA CUDA Installation Guide for Linux - Post-Installation Actions](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#post-installation-actions)
+  - [NVIDIA CUDA cuda-samples GitHub Repo](https://github.com/NVIDIA/cuda-samples/tree/master)
+    - [NVIDIA CUDA cuda-samples deviceQuery Utility](https://github.com/NVIDIA/cuda-samples/tree/master/Samples/1_Utilities/deviceQuery)
+
+Follow the instruction listed above on installation of the CUDA Development kit, but it should look something like this:
+
+1. wget https://developer.download.nvidia.com/compute/cuda/repos/wsl-ubuntu/x86_64/cuda-wsl-ubuntu.pin
+2. sudo mv cuda-wsl-ubuntu.pin /etc/apt/preferences.d/cuda-repository-pin-600
+3. wget https://developer.download.nvidia.com/compute/cuda/12.6.3/local_installers/cuda-repo-wsl-ubuntu-12-6-local_12.6.3-1_amd64.deb
+4. sudo dpkg -i cuda-repo-wsl-ubuntu-12-6-local_12.6.3-1_amd64.deb
+5. sudo cp /var/cuda-repo-wsl-ubuntu-12-6-local/cuda-*-keyring.gpg /usr/share/keyrings/
+6. sudo apt-get update
+7. sudo apt-get -y install cuda-toolkit-12-6
+
+**NOTE:**  **DO NOT SET `LD_LIBRARY_PATH` variable.**  The Post-Installation instructions may tell you to do this, but in the case of WSL based installs, I found that setting `LD_LIBRARY_PATH=/usr/local/cuda-12.6/lib64:/usr/lib/x86_64-linux-gnu` **breaks the ability to run nvidia-smi command as non-root user.**
+
+Also ensure that the CUDA Toolkit `bin` directory is listed at the beginning of the `PATH` environment variable list to ensure those binaries are found first.
+
+### Install NVIDIA drivers
+
+I am not sure this is actually required.  I would assume if this being installed the version that is to be installed should match the version of the NVDIA driver installed in Windows.  Howerever, I was able to make things work when I installed nvidia-driver-525 even though Driver Version: 566.36 is installed on the Windows side.  This makes me think installing these might not be required, but leaving it in for now.
+
+```zsh
+sudo apt install nvidia-driver-525
+```
+
+## CUDA Toolkit Install Verification
+
+### python
+
+Assuming you have a `conda` environment configured that has at least `tensorflow` installed you should be able to check visibility of the GPU via the following `python` command
+
+```python
+python -c "import tensorflow as tf; print(tf.config.list_physical_devices('GPU'))"
+```
+
+### nvcc
+
+```zsh
+nvcc --version
+
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2021 NVIDIA Corporation
+Built on Thu_Nov_18_09:45:30_PST_2021
+Cuda compilation tools, release 11.5, V11.5.119
+Build cuda_11.5.r11.5/compiler.30672275_0
+```
+
+### nvidia-smi
+
+```zsh
+nvidia-smi
+
+Mon Dec  9 14:49:50 2024
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 560.35.03              Driver Version: 561.09         CUDA Version: 12.6     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA GeForce RTX 3060        On  |   00000000:01:00.0  On |                  N/A |
+|  0%   34C    P8             15W /  170W |    1716MiB /  12288MiB |      8%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|    0   N/A  N/A        31      G   /Xwayland                                   N/A      |
++-----------------------------------------------------------------------------------------+
+```
 
 ### deviceQuery Output
 
@@ -137,46 +220,10 @@ Result = PASS
 NOTE: The CUDA Samples are not meant for performance measurements. Results may vary when GPU Boost is enabled.
 ```
 
-### nvcc
-
-```zsh
-nvcc --version
-
-nvcc: NVIDIA (R) Cuda compiler driver
-Copyright (c) 2005-2021 NVIDIA Corporation
-Built on Thu_Nov_18_09:45:30_PST_2021
-Cuda compilation tools, release 11.5, V11.5.119
-Build cuda_11.5.r11.5/compiler.30672275_0
-```
-
-### nvidia-smi
-
-```zsh
-nvidia-smi
-
-Mon Dec  9 14:49:50 2024
-+-----------------------------------------------------------------------------------------+
-| NVIDIA-SMI 560.35.03              Driver Version: 561.09         CUDA Version: 12.6     |
-|-----------------------------------------+------------------------+----------------------+
-| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
-| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
-|                                         |                        |               MIG M. |
-|=========================================+========================+======================|
-|   0  NVIDIA GeForce RTX 3060        On  |   00000000:01:00.0  On |                  N/A |
-|  0%   34C    P8             15W /  170W |    1716MiB /  12288MiB |      8%      Default |
-|                                         |                        |                  N/A |
-+-----------------------------------------+------------------------+----------------------+
-
-+-----------------------------------------------------------------------------------------+
-| Processes:                                                                              |
-|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
-|        ID   ID                                                               Usage      |
-|=========================================================================================|
-|    0   N/A  N/A        31      G   /Xwayland                                   N/A      |
-+-----------------------------------------------------------------------------------------+
-```
-
 ## cuDNN 9.6.0 Download & Install
+
+- [cuDNN 9.6.0 Downloads](https://developer.nvidia.com/cudnn-downloads?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu&target_version=22.04&target_type=deb_local)
+  - [Support Matrix GPU, CUDA Toolkit, and CUDA Driver Requirements](https://docs.nvidia.com/deeplearning/cudnn/latest/reference/support-matrix.html#f3)
 
 1. wget https://developer.download.nvidia.com/compute/cudnn/9.6.0/local_installers/cudnn-local-repo-ubuntu2204-9.6.0_1.0-1_amd64.deb
 2. sudo dpkg -i cudnn-local-repo-ubuntu2204-9.6.0_1.0-1_amd64.deb
@@ -441,10 +488,15 @@ Test passed!
 
 ## Install NVIDIA TensorRT
 
+- [Tensor RT Installation Guide](https://docs.nvidia.com/deeplearning/tensorrt/install-guide/index.html)
+  - [NVIDIA TensorRT 10.x Download](https://developer.nvidia.com/tensorrt/download/10x)
+
 ### Install TensorRT Packages
 
+**NOTE:**  These packages may already have been installed as part of the conda environment set-up
+
 ```zsh
-pip install tensorrt tensorrt-lean tensorrt-dispatch
+pip install tensorrt tensorrt_lean tensorrt_dispatch
 
 --------------------
 
@@ -455,12 +507,14 @@ Successfully installed tensorrt-10.7.0 tensorrt-dispatch-10.7.0 tensorrt-lean-10
 
 ### Install TensorRT System Libraries
 
-```zsh
+**NOTE:**  These packages may already have been installed as part of the conda environment set-up
+**NOTE:**  If you are installing via `pip` then you shouldn't need to perform the steps listed below.  Follwing the process outlined below is probably only necessary in the event that you are trying to ensure the installation of very specific versions of the TensorRT System Libraries.
 
+```zsh
 wget https://developer.download.nvidia.com/compute/cuda/repos/wsl-ubuntu/x86_64/cuda-keyring_1.1-1_all.deb
 sudo dpkg -i cuda-keyring_1.1-1_all.deb
 sudo apt-get update
-export os="ubuntu2404"
+export os="ubuntu2204"
 export tag="10.7.0-cuda-12.6"
 wget https://developer.nvidia.com/downloads/compute/machine-learning/tensorrt/10.7.0/local_repo/nv-tensorrt-local-repo-ubuntu2204-10.7.0-cuda-12.6_1.0-1_amd64.deb
 sudo dpkg -i nv-tensorrt-local-repo-${os}-${tag}_1.0-1_amd64.deb
