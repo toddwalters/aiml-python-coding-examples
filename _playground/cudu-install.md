@@ -1,5 +1,17 @@
 # Windows WSL CUDA Install and Configuration
 
+## Monitoring GPU Usage
+
+```zsh
+clear; gpustat -a -c -f --watch
+```
+
+OR
+
+```zsh
+nvitop
+```
+
 ## Reference Links
 
 - [Windows Driver Download](https://www.nvidia.com/en-us/drivers/results/)

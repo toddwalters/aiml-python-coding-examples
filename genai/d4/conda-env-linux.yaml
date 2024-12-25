@@ -20,3 +20,5 @@ dependencies:
     - torch
     - torchvision
     - torchaudio
+    - nvitop
+    - gpustat
