@@ -19,5 +19,8 @@ dependencies:
       - tensorflow-metal==0.8.0
       - openai
       - gradio
-      - python-dotenv
+      - langchain
+      - chromadb
+      - pypdf
+      - tiktoken
       - nbconvert
