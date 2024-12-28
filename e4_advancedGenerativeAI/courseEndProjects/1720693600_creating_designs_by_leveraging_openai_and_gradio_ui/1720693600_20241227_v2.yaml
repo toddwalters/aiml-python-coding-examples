@@ -19,3 +19,4 @@ dependencies:
       - openai
       - gradio
       - python-dotenv
+      - nbconvert
