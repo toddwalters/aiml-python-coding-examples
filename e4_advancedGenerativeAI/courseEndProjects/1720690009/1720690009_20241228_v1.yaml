@@ -1,0 +1,23 @@
+# macOS conda environment file
+name: 1720693600_20241227_v2
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  # Core Python version
+  - python=3.10.12
+  
+  # Core Conda dependencies
+  - pip
+  - numpy
+  - pandas
+  - matplotlib
+
+  # Additional dependencies not available via Conda
+  - pip:
+      - tensorflow-macos==2.13.0
+      - tensorflow-metal==0.8.0
+      - openai
+      - gradio
+      - python-dotenv
+      - nbconvert
