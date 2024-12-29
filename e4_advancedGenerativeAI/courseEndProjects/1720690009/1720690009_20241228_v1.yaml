@@ -1,5 +1,5 @@
 # macOS conda environment file
-name: 1720693600_20241227_v2
+name: 1720690009_20241228_v2
 channels:
   - conda-forge
   - defaults
