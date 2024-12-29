@@ -9,15 +9,14 @@ dependencies:
   
   # Core Conda dependencies
   - pip
-  - numpy
-  - pandas
-  - matplotlib
   - nbconvert
   - openai
   - gradio
   - chromadb
   - pypdf
   - tiktoken
+  - python-dotenv
+  - psutil
   - langchain
   - langchain-openai
   - langchain-community
