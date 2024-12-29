@@ -19,6 +19,7 @@ dependencies:
   - pypdf
   - tiktoken
   - langchain
+  - langchain-openai
   - langchain-community
 
   # Additional dependencies not available via Conda
